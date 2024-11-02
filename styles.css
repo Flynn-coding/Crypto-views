@@ -46,3 +46,80 @@ body {
   color: #ffdd00;
   transform: scale(1.05);
 }
+body {
+    margin: 0;
+    background-color: black;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    position: relative;
+    z-index: 2; /* Ensure ticker is above the background */
+}
+
+.ticker {
+    display: inline-block;
+    animation: ticker 10s linear infinite;
+    font-size: 2rem;
+}
+
+.crypto {
+    margin: 0 50px; /* Spacing between cryptocurrencies */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Animation for ticker movement */
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Scroll effect to change crypto */
+.ticker-container:hover .crypto {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Matrix background effect */
+.matrix-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Ensure background is below the ticker */
+}
+
+.matrix {
+    color: #00ff00;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0.1; /* Make the matrix text semi-transparent */
+    animation: matrix-animation 0.1s infinite;
+}
+
+@keyframes matrix-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
