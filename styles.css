@@ -1,0 +1,48 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Ticker Container */
+.ticker-container {
+  overflow: hidden;
+  width: 80%;
+  background: #222;
+  border-radius: 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ticker {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Cryptocurrency Display */
+.crypto {
+  min-width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #00ffab;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Animation for Hover Effect */
+.crypto:hover {
+  color: #ffdd00;
+  transform: scale(1.05);
+}
